@@ -36,7 +36,7 @@ public class Tileset {
 				 * 4	wasser
 				 * */
 				tiles.add(t);
-				
+				// if zb stein dann istBegehbar=false
 			}
 		}
 	}
