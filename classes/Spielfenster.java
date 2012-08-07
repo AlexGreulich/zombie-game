@@ -19,7 +19,7 @@ public class Spielfenster extends JFrame {
 	public Spielfenster(){
 		super("Project Z");
 		
-		spielfeld = new Spielfeld();
+		spielfeld = new Spielfeld(this);
 		
 		steuerung = new Steuerung();
 		addKeyListener(steuerung);

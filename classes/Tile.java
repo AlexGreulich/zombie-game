@@ -9,4 +9,7 @@ public class Tile {
 	public Tile(BufferedImage img){
 		image = img;
 	}
+	public BufferedImage getImage(){
+		return image;
+	}
 }
