@@ -8,7 +8,9 @@ public class Gameloop implements Runnable{
 	
 	@Override
 	public void run() {
-		
+		while(true){
+			//if steuerung =.... dann tue ....
+		}
 	}
 
 }
