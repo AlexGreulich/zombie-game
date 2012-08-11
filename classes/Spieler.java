@@ -1,7 +1,11 @@
 
-public class Spieler {
+public class Spieler extends Entity {
 
-	public Spieler(){
-		
+	
+	
+	public Spieler(int x,int y){
+		pos_x = x;
+		pos_y = y;
+		energy = 100;
 	}
 }

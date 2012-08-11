@@ -19,12 +19,13 @@ public class Spielfenster extends JFrame {
 	public Spielfenster(){
 		super("Project Z");
 		
+		spielfeld = new Spielfeld(this);
+		
 		steuerung = new Steuerung();
 		addKeyListener(steuerung);
 		
-		spieler = new Spieler();
-		
-		spielfeld = new Spielfeld();
+		spieler = new Spieler(10,10);
+				
 		add(spielfeld);
 		
 		gameloopthread = new Thread(gameloop);
