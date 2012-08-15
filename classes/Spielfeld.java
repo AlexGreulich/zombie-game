@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -37,19 +38,29 @@ public class Spielfeld extends JPanel implements Runnable{
 		//fenster.ofView
 		int ausschnitt_x = fenster.ofView.x;
 		int ausschnitt_y = fenster.ofView.y;
+		int ausschnitt_ende_x = ausschnitt_x+20,ausschnitt_ende_y = ausschnitt_y+20;
 		
-		for(int x = ausschnitt_x; x < ausschnitt_x + 32;x++){					/*level.karte.getWidth()*/			/*spieler.pos_y-10;x < spieler.pos_x +10*/
-			for(int y = ausschnitt_y; y < ausschnitt_y + 32;y++){					/*level.karte.getHeight()	*/		/*spieler.pos_x -10;y < spieler.pos_y +10*/
-				int id = level.getID(x, y);
-				g.drawImage(tileset.tiles.get(id).getImage(),x*32,y*32,null );
-			//System.out.println("tileID: "+ level.getID(x, y));	
+		for(int x = ausschnitt_x, rx =0;x < ausschnitt_ende_x;x++,rx++){					/*level.karte.getWidth()*/			/*ausschnitt_x; x < ausschnitt_x + 320*/
+			for(int y = ausschnitt_y, ry =0;y < ausschnitt_ende_x;y++,ry++){					/*level.karte.getHeight()	*/		/*ausschnitt_y; y < ausschnitt_y + 320*/
+				int id = level.getID(x,y);
+				BufferedImage pic = tileset.tiles.get(id).getImage();
+				g.drawImage(pic,rx*32,ry*32,null );
+				
+			//System.out.println("tileID: "+ level.getID(x, y));
+			//System.out.println("x,y: "+ x +", "+ y);
+			//System.out.println("ausschnitt_x,y: "+ ausschnitt_x +", "+ ausschnitt_y);
 			}
 			
 		}
 		
 	}
 	public void zeichneSpieler(Graphics g){
-		
+		//g.setColor(Color.WHITE);
+		for(int x =0; x < level.tileIDs.length;x++){					/*level.karte.getWidth()*/			/*spieler.pos_y-10;x < spieler.pos_x +10*/
+			for(int y =0; y < level.tileIDs.length;y++){		
+				System.out.println(level.getID(x,y));
+			}
+		}
 	}
 	public Dimension getPreferredSize(){
 		return new Dimension(800,600);		//?
